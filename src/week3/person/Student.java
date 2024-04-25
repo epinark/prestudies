@@ -9,6 +9,13 @@ public class Student extends Person {
 
      // Method to tell a joke
     public void tellJoke() {
-        System.out.println("Student " + getName() + " tells a joke: " + joke);
+        System.out.println(joke);
+    }
+
+    // Overriding the introduce method to include telling a joke
+    @Override
+    public void introduce() {
+        super.introduce();
+        tellJoke();
     }
 }

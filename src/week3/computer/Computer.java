@@ -22,9 +22,13 @@ public class Computer {
         this.preinstalledOperatingSystem = preinstalledOperatingSystem;
     }
 
-  public Computer(String manufacturerName, double screenSizeInches, boolean preinstalledOperatingSystem,
-                    double purchasePrice, double sellingPrice) {
+    public Computer(String manufacturerName, int processorSpeedMHz, int ramSizeGB, int hardDriveSizeGB, int numUsbPorts, String computerType, double screenSizeInches, boolean preinstalledOperatingSystem, double purchasePrice, double sellingPrice) {
         this.manufacturerName = manufacturerName;
+        this.processorSpeedMHz = processorSpeedMHz;
+        this.ramSizeGB = ramSizeGB;
+        this.hardDriveSizeGB = hardDriveSizeGB;
+        this.numUsbPorts = numUsbPorts;
+        this.computerType = computerType;
         this.screenSizeInches = screenSizeInches;
         this.preinstalledOperatingSystem = preinstalledOperatingSystem;
         this.purchasePrice = purchasePrice;
@@ -86,6 +90,7 @@ public class Computer {
 
     public void setComputerType(String computerType) {
         this.computerType = computerType;
+
     }
 
     public boolean isPreinstalledOperatingSystem() {
@@ -125,13 +130,18 @@ public class Computer {
     // toString method
     @Override
     public String toString() {
-        return "manufacturerName='" + manufacturerName + '\n' +
-                ", processorSpeedMHz=" + processorSpeedMHz + '\n' +
-                ", ramSizeGB=" + ramSizeGB + '\n' +
-                ", hardDriveSizeGB=" + hardDriveSizeGB + '\n' +
-                ", numUsbPorts=" + numUsbPorts + '\n' +
-                ", screenSizeInches=" + screenSizeInches + '\n' +
-                ", computerType='" + computerType + '\n' +
-                ", preinstalledOperatingSystem=" + preinstalledOperatingSystem + '\n';
+        return "\n- manufacturerName=" + manufacturerName + '\n' +
+                "- processorSpeedMHz=" + processorSpeedMHz + '\n' +
+                "- ramSizeGB=" + ramSizeGB + '\n' +
+                "- hardDriveSizeGB=" + hardDriveSizeGB + '\n' +
+                "- numUsbPorts=" + numUsbPorts + '\n' +
+                "- screenSizeInches=" + screenSizeInches + '\n' +
+                "- computerType='" + computerType + '\n' +
+                "- preinstalledOperatingSystem=" + preinstalledOperatingSystem + '\n';
+    }
+
+    // Method to calculate profit
+    public double calculateProfitForEach() {
+        return sellingPrice - purchasePrice;
     }
 }
