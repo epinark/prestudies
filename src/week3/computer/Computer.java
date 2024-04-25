@@ -117,11 +117,6 @@ public class Computer {
         this.sellingPrice = sellingPrice;
     }
 
-    // Method to double RAM
-    public void performMemoryUpgrade() {
-        this.ramSizeGB *= 2;
-    }
-
     // Method to calculate profit
     public double calculateProfitForEach() {
         return sellingPrice - purchasePrice;
