@@ -123,25 +123,22 @@ public class Computer {
     }
 
     // Method to calculate profit
-    public double calculateProfit() {
+    public double calculateProfitForEach() {
         return sellingPrice - purchasePrice;
     }
 
     // toString method
     @Override
     public String toString() {
-        return "\n- manufacturerName=" + manufacturerName + '\n' +
-                "- processorSpeedMHz=" + processorSpeedMHz + '\n' +
-                "- ramSizeGB=" + ramSizeGB + '\n' +
-                "- hardDriveSizeGB=" + hardDriveSizeGB + '\n' +
-                "- numUsbPorts=" + numUsbPorts + '\n' +
-                "- screenSizeInches=" + screenSizeInches + '\n' +
-                "- computerType='" + computerType + '\n' +
+        return "\n- manufacturerName=" + (manufacturerName == null ? "Not selected" : manufacturerName)+ '\n' +
+                "- processorSpeedMHz=" + (processorSpeedMHz == 0 ? "Not selected" : processorSpeedMHz) + '\n' +
+                "- ramSizeGB=" + (ramSizeGB == 0 ? "Not selected" : ramSizeGB) + '\n' +
+                "- hardDriveSizeGB=" + (hardDriveSizeGB == 0 ? "Not selected" : hardDriveSizeGB) + '\n' +
+                "- numUsbPorts=" + (numUsbPorts == 0 ? "Not selected" : numUsbPorts) + '\n' +
+                "- screenSizeInches=" + (screenSizeInches == 0 ? "Not selected" : screenSizeInches) + '\n' +
+                "- computerType=" + (computerType == null ? "Not selected" : computerType) + '\n' +
                 "- preinstalledOperatingSystem=" + preinstalledOperatingSystem + '\n';
     }
 
-    // Method to calculate profit
-    public double calculateProfitForEach() {
-        return sellingPrice - purchasePrice;
-    }
+
 }
