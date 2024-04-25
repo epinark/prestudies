@@ -3,55 +3,36 @@ import java.util.ArrayList;
 
 public class ComputerTest {
     public static void main(String[] args) {
-        // Create example computer objects
-        Computer computer1 = new Computer("Dell", 15.6, true);
-        computer1.setPurchasePrice(500);
-        computer1.setSellingPrice(700);
-        computer1.setRamSizeGB(256);
+        // Part I: Creating computer objects and testing
+        Computer computer1 = new Computer();
+        Computer computer2 = new Computer("HP", 15.6, true);
+        Computer computer3 = new Computer("Dell", 3000, 8, 500, 4, "Laptop", 17.3, true, 800, 1200);
 
-        Computer computer2 = new Computer("HP", 13.3, false);
-        computer2.setPurchasePrice(600);
-        computer2.setSellingPrice(950);
+        computer1.setSellingPrice(1000);
+        computer1.setPurchasePrice(800);
+        computer2.setSellingPrice(1000);
+        computer2.setPurchasePrice(500);
 
-        Computer computer3 = new Computer("Lenovo", 17.0, true);
-        computer3.setPurchasePrice(700);
-        computer3.setSellingPrice(1000);
+        // Print computers
+        System.out.println("Computer 1: " + computer1);
+        System.out.println("Computer 2: " + computer2);
+        System.out.println("Computer 3: " + computer3);
 
-        Computer computer4 = new Computer("Asus", 14.0, false);
-        computer4.setPurchasePrice(550);
-        computer4.setSellingPrice(750);
+        // Part II: Memory upgrade and profit calculation
+        computer3.doubleRamSize();
+        System.out.println("After memory upgrade: " + computer3);
+        System.out.println("Profit for Computer 3: $" + computer3.calculateProfit());
 
-        Computer computer5 = new Computer("Acer", 15.6, true);
-        computer5.setPurchasePrice(650);
-        computer5.setSellingPrice(850);
+        // Part III: Computer shop and profit calculation
+        ArrayList<Computer> computers = new ArrayList<>();
+        computers.add(computer1);
+        computers.add(computer2);
+        computers.add(computer3);
 
-        // Create an ArrayList of computers
-        ArrayList<Computer> computerList = new ArrayList<>();
-        computerList.add(computer1);
-        computerList.add(computer2);
-        computerList.add(computer3);
-        computerList.add(computer4);
-        computerList.add(computer5);
-
-        // Print properties of the computer
-        System.out.println(computer1);
-
-        // Perform memory upgrade
-        computer1.setRamSizeGB(computer1.getRamSizeGB() * 2);
-        System.out.println("Computer after memory upgrade: " + computer1);
-
-        // Create a ComputerShop object
-        ComputerShop shop = new ComputerShop(computerList);
-
-        // Calculate and print potential profit
-        System.out.println("Profit for the computer1: $" + computer1.calculateProfitForEach());
-        System.out.println("Profit for the computer2: $" + computer2.calculateProfitForEach());
-        System.out.println("Profit for the computer3: $" + computer3.calculateProfitForEach());
-        System.out.println("Profit for the computer4: $" + computer4.calculateProfitForEach());
-        System.out.println("Profit for the computer5: $" + computer5.calculateProfitForEach());
-        System.out.println("Potential profit of the shop: $" + shop.calculateProfit());
-
+        ComputerShop shop = new ComputerShop(computers);
+        System.out.println("Total potential profit: $" + shop.calculateProfit());
     }
-    }
+}
+
 
 

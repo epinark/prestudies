@@ -12,7 +12,7 @@ public class ComputerShop {
     public double calculateProfit() {
         double totalProfit = 0;
         for (Computer computer : computers) {
-            totalProfit += computer.calculateProfitForEach();
+            totalProfit += computer.calculateProfit();
         }
         return totalProfit;
     }

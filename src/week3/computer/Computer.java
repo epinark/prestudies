@@ -117,22 +117,28 @@ public class Computer {
         this.sellingPrice = sellingPrice;
     }
 
+      // Method to double RAM size
+    public void doubleRamSize() {
+        this.ramSizeGB *= 2;
+    }
+
     // Method to calculate profit
-    public double calculateProfitForEach() {
+    public double calculateProfit() {
         return sellingPrice - purchasePrice;
     }
+
 
     // toString method
     @Override
     public String toString() {
-        return "\n- manufacturerName=" + (manufacturerName == null ? "Not selected" : manufacturerName)+ '\n' +
-                "- processorSpeedMHz=" + (processorSpeedMHz == 0 ? "Not selected" : processorSpeedMHz) + '\n' +
-                "- ramSizeGB=" + (ramSizeGB == 0 ? "Not selected" : ramSizeGB) + '\n' +
-                "- hardDriveSizeGB=" + (hardDriveSizeGB == 0 ? "Not selected" : hardDriveSizeGB) + '\n' +
-                "- numUsbPorts=" + (numUsbPorts == 0 ? "Not selected" : numUsbPorts) + '\n' +
+        return "\n- manufacturerName = " + (manufacturerName == null ? "Not selected" : manufacturerName)+ '\n' +
+                "- processorSpeedMHz = " + (processorSpeedMHz == 0 ? "Not selected" : processorSpeedMHz) + '\n' +
+                "- ramSizeGB = " + (ramSizeGB == 0 ? "Not selected" : ramSizeGB) + '\n' +
+                "- hardDriveSizeGB = " + (hardDriveSizeGB == 0 ? "Not selected" : hardDriveSizeGB) + '\n' +
+                "- numUsbPorts = " + (numUsbPorts == 0 ? "Not selected" : numUsbPorts) + '\n' +
                 "- screenSizeInches=" + (screenSizeInches == 0 ? "Not selected" : screenSizeInches) + '\n' +
-                "- computerType=" + (computerType == null ? "Not selected" : computerType) + '\n' +
-                "- preinstalledOperatingSystem=" + preinstalledOperatingSystem + '\n';
+                "- computerType = " + (computerType == null ? "Not selected" : computerType) + '\n' +
+                "- preinstalledOperatingSystem = " + preinstalledOperatingSystem + '\n';
     }
 
 
